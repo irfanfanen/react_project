@@ -9,7 +9,7 @@ function ListData() {
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => setData(data));
-  }, []);
+  });
 
   return (
     <div>
