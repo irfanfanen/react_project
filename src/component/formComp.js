@@ -9,6 +9,14 @@ const FormComp = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('submit');
+
+        const { username, password } = formData;
+
+        if(username.trim() === '' || password.trim() === '') {
+            alert('Username dan password harus diisi.');
+        }else{
+            alert(`Welcome, ${username}!`);
+        }
     }
 
     const handleChange = (event) => {

@@ -1,21 +1,28 @@
-import './App.css';
-import {Button, Button2} from './Button';
-import { ListComp } from './component/list';
-import { FormComp } from './component/formComp';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomeComp from './component/home';
+import ListData from './component/listData';
 
 function App() {
-
-  let nameButton = "100";
-
   return (
-    <div>
-      <h1>Hello, Word!</h1>
-      <FormComp />
-      <ListComp />
-      <Button text="Tombol 11"/>
-      <br />
-      <Button2 text={nameButton} />
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/list">List</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<HomeComp />} />
+          <Route path="/list" element={<ListData />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
